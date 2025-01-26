@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { useRouter } from "next/router"
 import { useEffect,useState } from "react"
 import {
     Dialog,
@@ -12,7 +11,7 @@ import {
     DialogTitle,
 
 } from "@/components/ui/dialog"
-import { Button } from "../ui/button"
+import { Button } from "@/components/ui/button"
 import { useExitModel } from "@/app/store/use-exit-model"
 
  export const ExitModal =() =>{
@@ -25,30 +24,25 @@ import { useExitModel } from "@/app/store/use-exit-model"
     return null;
    }
 
-   setTimeout(()=>{
-    close
-}, 5000);
+  setTimeout(()=>{
+        close
+   }, 5000);
 
    return(
-
-    <Dialog open={isOpen} onOpenChange={close}>
+<Dialog open={false} onOpenChange={close}>
         <DialogContent className="max-w-md">
            
             <DialogHeader>
                 <div className="flex items-center w-full justify-center mb-5">
                     <Image src ="/mascot_sad.svg" alt="Mascot" height ={80} width={80} ></Image>
                 </div>
-                <DialogTitle className="text-center font-bold text-2xl"> Instruction for the quiz</DialogTitle>
+                <DialogTitle className="text-center font-bold text-2xl"> Don't leave</DialogTitle>
                 <DialogDescription>
-                    The hearts are your life when you make a mistake in finding the correct ans you lose a heart
-                </DialogDescription>
-                <DialogDescription>
-                    The hearts can be purchased through store
-                    
+                    You are about to leave the lesson are you,sure
                 </DialogDescription>
             </DialogHeader>
             <DialogFooter className="mb-4">
-             <Button variant="primary" className="w-full" size="lg" onClick ={close} >Understood!</Button>
+             <Button variant="primary" className="w-full" size="lg" onClick ={close} >Keep learning</Button>
             </DialogFooter>
         </DialogContent>
     </Dialog>

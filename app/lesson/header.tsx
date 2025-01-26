@@ -20,8 +20,8 @@ export const Header = ({hearts,percentage,hasActiveSubscription}:Props)=>{
                 onClick={()=>{}}
                 className="text-slate-500 hover:opacity-75 transition cursor-pointer"/>
                 <Progress value={percentage}/>
-                <div className="text-rose-500 flex itemp-center font-bold">
-                    <Image src="heart.svg"height={28} width={28}  alt="Heart image"
+                <div className="text-rose-500 flex itemp-center <Image src="heart.svg"height={28} width={28}  alt="Heart imagfont-bold">
+                    e"
                     />
                     
                     {hasActiveSubscription?<InfinityIcon className="h-6 w-6 stroke-[3]"/>: hearts
