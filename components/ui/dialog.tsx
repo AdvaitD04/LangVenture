@@ -1,5 +1,5 @@
 "use client"
-/// dialog is install by me using shadcn
+
 import * as React from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { X } from "lucide-react"

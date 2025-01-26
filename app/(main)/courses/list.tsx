@@ -5,7 +5,7 @@ import { useTransition } from "react";
 
 import { courses, userProgress } from "@/db/schema";
 import { Card } from "./card";
-import { upsertUserProgress } from "@/action/user-progress"
+import { upsertUserProgress } from "@/actions/user-progress";
 import { toast } from "sonner";
 
 
