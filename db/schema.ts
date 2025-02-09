@@ -6,6 +6,27 @@ export const courses = pgTable("courses", {
     title: text("title").notNull(),
     imageSrc: text("image_src").notNull(),
 });
+
+export const basicsdb = pgTable("basicdb", {
+    id: serial("id").primaryKey(),
+    imageSrc: text("image_src").notNull(),
+    title: text("title").notNull(),
+    nativenm: text("nativename").notNull(),
+    courseId: integer("course_id").references(() => courses.id, { onDelete: "cascade" }).notNull(),
+    audioSrc: text("audio_src"),
+});
+
+export const basicsdbcore = pgTable("basicdbcore", {
+    id: serial("id").primaryKey(),
+    pronunciation: text("pronunciation").notNull(),
+    nativenm: text("nativename").notNull(),
+    courseId: integer("course_id").references(() => courses.id, { onDelete: "cascade" }).notNull(),
+    order: integer("order").notNull(),
+    type: text("type", { enum: ["alphabet", "number"] }).notNull(),
+    audioSrc: text("audio_src"),
+});
+
+
     
 export const coursesRelations = relations(courses, ({ many }) => ({
     userProgress: many(userProgress),
